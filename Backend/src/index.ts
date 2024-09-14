@@ -21,13 +21,14 @@ app.use(cookieparser())
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.use(cors({
-    origin:'https://hotel-booking-app-2-zd74.onrender.com',
+    origin:true,
     credentials:true
 }))
 app.use(express.static(path.join(__dirname,"../../frontend/dist")))
 app.use("/api/auth",authRoutes)
 app.use("/api/users",userRoutes)
 
-app.listen(7000,()=>{
-    console.log("server running on localhost 7000")
+const PORT = process.env.PORT || 7000;
+app.listen(PORT,()=>{
+    console.log("server running on localhost ${PORT}")
 })

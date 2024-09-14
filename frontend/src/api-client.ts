@@ -1,7 +1,7 @@
 import { RegisterFormData } from "./pages/register";
 import { SignInFormData } from "./pages/signin";
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://hotel-booking-app-2-zd74.onrender.com';
 
 export const register = async (formData: RegisterFormData) => {
 
